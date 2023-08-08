@@ -19,4 +19,4 @@ target/
 *.ipr
 
 .mvn
-/.idea/
+.idea
