@@ -11,6 +11,9 @@ public class Cody5Controller {
 
     @GetMapping
     public String getHello(@RequestParam("name") String name){
+        if(name == null || name.isEmpty()){
+            return "Должен быть заполнен параметр";
+        }
         return "Hello " + name;
     }
 }
