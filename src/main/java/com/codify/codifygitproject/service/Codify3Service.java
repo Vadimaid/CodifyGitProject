@@ -6,26 +6,21 @@ import java.util.Arrays;
 
 @Service
 public class Codify3Service {
-    private String[] array = new String[2];
 
-    public Codify3Service() {
-        array[0] = "first";
-        array[1] = "second";
-    }
-
-
-    public void search(String element) {
+    public Boolean search(String[] array, String element) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == element) {
                 System.out.println("found");
-                return;
+                return true;
             }
         }
         System.out.println("not found");
+        return false;
     }
 
-    public void sort() {
+    public String[] sort(String[] array) {
         Arrays.sort(array);
         System.out.println("array sorted");
+        return array;
     }
 }
