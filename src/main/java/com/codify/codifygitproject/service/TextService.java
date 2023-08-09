@@ -6,11 +6,12 @@ import java.util.Objects;
 
 public class TextService {
     public Integer countWordsInText(String text) {
-        String textTrimmed = text.trim();
+//        String textTrimmed = text.trim();
         if (text.isEmpty() || Objects.isNull(text)) {
             throw new IllegalArgumentException("Текст не должен быть пустым!");
         }
-        Integer result = textTrimmed.split("\\s").length;
+//        Integer result = textTrimmed.split("\\s").length;
+        Integer result = text.split("\\s").length;
         return result;
     }
 
@@ -19,7 +20,7 @@ public class TextService {
             throw new IllegalArgumentException("Текст не должен быть пустым!");
         }
         Integer result = text.indexOf(word);
-        if (Objects.isNull(result)) {
+        if (result == -1) {
             throw new NoSuchWordException(String.format("Нет слова %s в тексте!", word));
         }
         return result;

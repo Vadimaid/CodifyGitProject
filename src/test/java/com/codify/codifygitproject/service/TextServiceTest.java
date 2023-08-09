@@ -4,8 +4,6 @@ import com.codify.codifygitproject.exception.NoSuchWordException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class TextServiceTest {
     TextService textService = new TextService();
     String text = "Java — строго типизированный объектно-ориентированный язык";
@@ -23,7 +21,7 @@ class TextServiceTest {
     @Test
     public void CountWordsInTextException_Test() throws IllegalArgumentException {
         Exception exception = Assertions.assertThrows(
-                IllegalArgumentException.class, () -> textService.countWordsInText(""));
+                IllegalArgumentException.class, () -> textService.countWordsInText("  "));
         Assertions.assertTrue(exception.getMessage().contains("Текст не должен быть пустым!"));
     }
 

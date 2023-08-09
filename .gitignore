@@ -20,3 +20,7 @@ target/
 
 .mvn
 /.idea/
+.idea/vcs.xml
+.idea/CodifyGitProject.iml
+.idea/misc.xml
+.idea/modules.xml
