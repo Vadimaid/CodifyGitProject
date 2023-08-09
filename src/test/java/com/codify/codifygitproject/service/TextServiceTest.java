@@ -36,9 +36,16 @@ class TextServiceTest {
     }
 
     @Test
-    public void FindWordInTextException_Test() throws IllegalArgumentException {
+    public void FindWordInTextException_Test() throws NoSuchWordException {
         Exception exception = Assertions.assertThrows(
                 NoSuchWordException.class, () -> textService.findWordInText("Hello", text));
         Assertions.assertTrue(exception.getMessage().contains(String.format("Нет слова %s в тексте!", "Hello")));
+    }
+
+    @Test
+    public void FindWordInTextException2_Test() throws IllegalArgumentException {
+        Exception exception = Assertions.assertThrows(
+                IllegalArgumentException.class, () -> textService.findWordInText("Hello", ""));
+        Assertions.assertTrue(exception.getMessage().contains("Текст не должен быть пустым!"));
     }
 }
