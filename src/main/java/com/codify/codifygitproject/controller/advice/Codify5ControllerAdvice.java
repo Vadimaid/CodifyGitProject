@@ -17,7 +17,7 @@ public class Codify5ControllerAdvice {
     }
     @ExceptionHandler(value =  MissingServletRequestParameterException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String handleIllegalArgumentException(MissingServletRequestParameterException ex){
+    public String handleIllegalArgumentException(){
         return "Параметр <name> не должен быть null";
     }
 }
